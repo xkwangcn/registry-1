@@ -19,7 +19,7 @@ RUN git clone https://github.com/devfile/registry-support.git /registry-support
 # Run the registry build tools
 RUN /registry-support/build-tools/build.sh /registry /build
 
-FROM quay.io/devfile/devfile-index-base:next
+FROM localhost/devfile-index-base:next
 
 COPY --from=builder /build/index.json /index.json
 COPY --from=builder /build/stacks /stacks
