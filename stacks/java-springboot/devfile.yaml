@@ -2,13 +2,6 @@ schemaVersion: 2.0.0
 metadata:
   name: java-springboot
   version: 1.1.0
-  displayName: Spring Boot®
-  description: Spring Boot® using Java
-  tags: ["Java", "Spring"]
-  globalMemoryLimit: 2674Mi
-  icon: https://www.eclipse.org/che/images/logo-eclipseche.svg
-  projectType: "spring"
-  language: "java"
 starterProjects:
   - name: springbootproject
     git:
@@ -17,7 +10,7 @@ starterProjects:
 components:
   - name: tools
     container:
-      image: quay.io/eclipse/che-java11-maven:nightly
+      image: registry.redhat.io/codeready-workspaces/plugin-java11-openj9-rhel8 
       memoryLimit: 768Mi
       mountSources: true
       endpoints:

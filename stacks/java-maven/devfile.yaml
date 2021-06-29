@@ -2,11 +2,6 @@ schemaVersion: 2.0.0
 metadata:
   name: java-maven
   version: 1.1.0
-  displayName: Maven Java
-  description: Upstream Maven and OpenJDK 11
-  tags: ["Java", "Maven"]
-  projectType: "maven"
-  language: "java"
 starterProjects:
   - name: springbootproject
     git:
@@ -15,7 +10,7 @@ starterProjects:
 components:
   - name: tools
     container:
-      image: quay.io/eclipse/che-java11-maven:nightly
+      image: registry.redhat.io/codeready-workspaces/plugin-java11-openj9-rhel8
       memoryLimit: 512Mi
       mountSources: true
       endpoints:
