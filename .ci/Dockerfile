@@ -14,12 +14,12 @@ RUN apk add --no-cache git bash
 COPY . /registry
 
 # Download the registry build tools
-RUN git clone https://github.com/devfile/registry-support.git /registry-support
+RUN git clone https://github.com/xkwangcn/registry-support.git /registry-support
 
 # Run the registry build tools
 RUN /registry-support/build-tools/build.sh /registry /build
 
-FROM localhost/devfile-index-base:next
+FROM localhost/devfile-index-base:latest
 
 COPY --from=builder /build/index.json /index.json
 COPY --from=builder /build/stacks /stacks
